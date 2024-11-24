@@ -66,7 +66,7 @@ if option == 1:
 
 
 
-            print(int(100*(current_student_total_grade/total_grade)),end='')
+            print(int(round((100*(current_student_total_grade/total_grade)))),end='')
             print("%")
     if current_student_total_grade == 0:
         print('Student not found')
