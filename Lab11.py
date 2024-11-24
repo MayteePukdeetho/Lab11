@@ -97,4 +97,14 @@ elif option == 2:
         print('Assignment not found.')
 
 elif option == 3:
-    test = input('What is the assignment name: ')
+    scores = []
+    chosen_assignment_name = input('What is the assignment name: ')
+    for assignment_data_block in assignments:
+        if assignment_data_block[0] == chosen_assignment_name:
+            chosen_assignment_id = assignment_data_block[1]
+            for submission in submissions:
+                if chosen_assignment_id == submission[1]:
+                    current_submission_grade = submission[2]
+                    scores.append(current_submission_grade)
+    plt.hist(scores, bins=[60,63,67,70,73,77,80,83,87,90,93,97,100])
+    plt.show()
